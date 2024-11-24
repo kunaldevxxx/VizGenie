@@ -1,3 +1,5 @@
+import { Chart } from 'chart.js';
+
 export function renderChart(canvas, data) {
   const ctx = canvas.getContext('2d');
   const labels = data.map((item) => item.category);
@@ -26,4 +28,18 @@ export function renderChart(canvas, data) {
           },
       },
   });
+}
+
+export function applyTheme(element, theme) {
+  if (!element || !(element instanceof HTMLElement)) {
+    throw new Error('Invalid element provided');
+  }
+  
+  const themeStyles = {
+    backgroundColor: theme.backgroundColor || '#ffffff',
+    color: theme.color || '#000000',
+    borderColor: theme.borderColor || '#cccccc'
+  };
+  
+  Object.assign(element.style, themeStyles);
 }

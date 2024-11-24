@@ -1,4 +1,4 @@
-import Plotly from "plotly.js-dist";
+import Plotly from "plotly.js";
 
 export function renderPlotlyChart(container, data, chartType) {
   const trace = {
